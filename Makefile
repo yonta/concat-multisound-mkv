@@ -48,7 +48,7 @@ $(VIDEO_INDEX_FILE): $(ALL_INPUT_FILES)
 
 # 複数のmkvを結合する
 $(VIDEO_FILE): $(VIDEO_INDEX_FILE) $(ALL_VIDEO_FILES)
-	ffmpeg -f concat -i $< -c copy $@
+	ffmpeg -f concat -safe 0 -i $< -c copy $@
 
 ######## BGM #############################
 
@@ -59,7 +59,7 @@ $(BGM_INDEX_FILE): $(ALL_BGM_FILES)
 
 # 複数のaacを結合する
 $(BGM_FILE): $(BGM_INDEX_FILE) $(ALL_BGM_FILES)
-	ffmpeg -f concat -i $< -c copy $@
+	ffmpeg -f concat -safe 0 -i $< -c copy $@
 
 # 複数のmkvから複数のaacをつくる
 %_bgm.aac: %.mkv
@@ -74,7 +74,7 @@ $(VOICE_INDEX_FILE): $(ALL_VOICE_FILES)
 
 # 複数のaacを結合する
 $(VOICE_FILE): $(VOICE_INDEX_FILE) $(ALL_VOICE_FILES)
-	ffmpeg -f concat -i $< -c copy $@
+	ffmpeg -f concat -safe 0 -i $< -c copy $@
 
 # 複数のmkvから複数のaacをつくる
 %_voice.aac: %.mkv
