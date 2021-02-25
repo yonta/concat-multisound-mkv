@@ -10,6 +10,7 @@ ALL_INPUT_FILES = $(filter-out $(VIDEO_FILE),$(filter-out $(TARGET),$(ALL_MKV_FI
 # 音量（ex. 倍2、半減-0.5、10dB、-10dB）
 
 BGM_VOLUME = -10dB
+VOICE_VOLUME = 1.0
 
 # 一時ファイル
 
@@ -77,7 +78,7 @@ $(VOICE_FILE): $(VOICE_INDEX_FILE) $(ALL_VOICE_FILES)
 
 # 複数のmkvから複数のaacをつくる
 %_voice.aac: %.mkv
-	ffmpeg -i $< -vn -map 0:3 -acodec aac $@
+	ffmpeg -i $< -vn -map 0:3 -acodec aac -filter:a volume=$(VOICE_VOLUME) $@
 
 ######## CLEAN #############################
 
