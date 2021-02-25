@@ -99,7 +99,6 @@ endif
 ######## CLEAN #############################
 
 clean:
-	rm -rf $(TARGET)
 	rm -rf $(SOUND_FILE) $(VOICE_FILE) $(BGM_FILE)
 ifneq ($(VIDEO_FILE),$(ALL_INPUT_FILES))
 	rm -rf $(ALL_VOICE_FILES) $(ALL_BGM_FILES)

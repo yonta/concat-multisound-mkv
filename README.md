@@ -63,3 +63,8 @@ ffmpeg -i input1.mkv -vn -map 0:2 -codec:a aac -filter:a volume=-10dB input1_bgm
 video:2364kB audio:244kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.258335%
 $
 ```
+
+### Cleaning
+
+After script have finished, run `make clean` to remove old temporarily files.
+And move your videos and output video to other place.
