@@ -6,8 +6,7 @@ TARGET := output.mkv
 
 ALL_MKV_FILES := $(wildcard *.mkv)
 VIDEO_FILE_NAME := video.mkv
-# HACK: VIDEO_FILE_NAMEを使うので、ここだけ遅延評価=を使う
-ALL_INPUT_FILES := $(filter-out $(VIDEO_FILE_NAME),$(filter-out $(TARGET),$(ALL_MKV_FILES)))
+ALL_INPUT_FILES := $(sort $(filter-out $(VIDEO_FILE_NAME),$(filter-out $(TARGET),$(ALL_MKV_FILES))))
 
 # 音量（ex. 倍2、半減-0.5、10dB、-10dB）
 

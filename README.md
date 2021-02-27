@@ -36,6 +36,8 @@ It makes video small, and you manage it easily.
 
 Move recorded videos to same directory with `Makefile` of this repository.
 Our script targets all videos in this directory.
+The videos should have name with recorded date, because concatenation order
+corresponds one sorted by names.
 
 ### Edit Volume configuration
 
