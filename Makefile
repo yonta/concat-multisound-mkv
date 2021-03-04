@@ -56,8 +56,6 @@ $(VIDEO_INDEX_FILE): $(ALL_INPUT_FILES)
 
 # 複数のmkvを結合する
 $(VIDEO_FILE): $(VIDEO_INDEX_FILE) $(ALL_INPUT_FILES)
-	echo "video file" $(VIDEO_FILE)
-	echo "video file" $(ALL_INPUT_FILES)
 	ffmpeg -f concat -safe 0 -i $< -c copy $@
 endif
 
